@@ -6,6 +6,11 @@
     <bean id="iProductService" class="com.example.exercise11_2.service.IProductService" abstract="true">
     </bean>
     <bean id="productService" class="com.example.exercise11_2.service.impl.ProductService" parent="iProductService">
+        <constructor-arg name="inventoryService" ref="inventoryServiceImpl"></constructor-arg>
+    </bean>
 
+    <bean id="inventoryService" class="com.example.exercise11_2.service.InventoryService" abstract="true"></bean>
+    <bean id="inventoryServiceImpl" class="com.example.exercise11_2.service.impl.InventoryServiceImpl"
+          parent="inventoryService">
     </bean>
 </beans>
