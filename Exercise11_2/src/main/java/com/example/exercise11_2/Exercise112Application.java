@@ -19,14 +19,15 @@ public class Exercise112Application {
         Product product1 = productService.getProduct(423);
         if (product1 != null) {
             System.out.println(product1.toString());
-            System.out.println("Product1 Number in stock " + productService.getNumberInStock(10));
         }
         Product product2 = productService.getProduct(239);
         if (product2 != null) {
             System.out.println(product2.toString());
-            System.out.println("Product2 Number in stock " + productService.getNumberInStock(20));
-
         }
+        System.out.println("we have " + productService.getNumberInStock(423)
+                + " product(s) with productNumber 423 in stock");
+        System.out.println("we have " + productService.getNumberInStock(239)
+                + " product(s) with productNumber 239 in stock");
     }
 
 }
