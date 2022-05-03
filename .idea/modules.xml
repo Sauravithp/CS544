@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/EA_Spring.iml" filepath="$PROJECT_DIR$/.idea/EA_Spring.iml" />
       <module fileurl="file://$PROJECT_DIR$/Exercise11_1/Exercise11_1.iml" filepath="$PROJECT_DIR$/Exercise11_1/Exercise11_1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Exercise11_2/Exercise11_2.iml" filepath="$PROJECT_DIR$/Exercise11_2/Exercise11_2.iml" />
     </modules>
   </component>
 </project>
