@@ -10,21 +10,23 @@ import com.example.exercise12_1.logging.ILogger;
 import com.example.exercise12_1.logging.Logger;
 import com.example.exercise12_1.service.AccountService;
 import com.example.exercise12_1.service.CurrencyConverter;
+import lombok.Setter;
 
 import java.util.Collection;
 
+@Setter
 public class AccountServiceImpl implements AccountService {
 	private IAccountDAO accountDAO;
 	private CurrencyConverter currencyConverter;
 	private IJMSSender jmsSender;
 	private ILogger logger;
 	
-	public AccountServiceImpl(AccountDAO accountDAO, CurrencyConverterImpl currencyConverter, JMSSender jmsSender, Logger logger ){
-		this.accountDAO=accountDAO;
-		this.currencyConverter= currencyConverter;
-		this.jmsSender = jmsSender;
-		this.logger = logger;
-	}
+//	public AccountServiceImpl(AccountDAO accountDAO, CurrencyConverterImpl currencyConverter, JMSSender jmsSender, Logger logger ){
+//		this.accountDAO=accountDAO;
+//		this.currencyConverter= currencyConverter;
+//		this.jmsSender = jmsSender;
+//		this.logger = logger;
+//	}
 
 	public Account createAccount(long accountNumber, String customerName) {
 		Account account = new Account(accountNumber);

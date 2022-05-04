@@ -5,10 +5,15 @@
 
     <bean id="accountService" class="com.example.exercise12_1.service.AccountService" abstract="true"></bean>
     <bean id="accountServiceImpl" class="com.example.exercise12_1.service.impl.AccountServiceImpl" parent="accountService">
-        <constructor-arg ref="accountDAOImpl"></constructor-arg>
-        <constructor-arg ref="currencyConverterServiceImpl"></constructor-arg>
-        <constructor-arg ref="jmsServiceImpl"></constructor-arg>
-        <constructor-arg ref="loggerImpl"></constructor-arg>
+        <property name="accountDAO" ref="accountDAOImpl"></property>
+        <property name="currencyConverter" ref="currencyConverterServiceImpl"></property>
+        <property name="jmsSender" ref="jmsServiceImpl"></property>
+        <property name="logger" ref="loggerImpl"></property>
+
+        <!--        <constructor-arg ref="accountDAOImpl"></constructor-arg>-->
+<!--        <constructor-arg ref="currencyConverterServiceImpl"></constructor-arg>-->
+<!--        <constructor-arg ref="jmsServiceImpl"></constructor-arg>-->
+<!--        <constructor-arg ref="loggerImpl"></constructor-arg>-->
     </bean>
 
     <bean id="accountDAO" class="com.example.exercise12_1.dao.IAccountDAO" abstract="true"></bean>
