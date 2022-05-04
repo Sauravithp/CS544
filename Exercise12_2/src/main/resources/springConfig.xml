@@ -7,8 +7,6 @@
     <import resource="springdaoconfig.xml"/>
     <import resource="springserviceconfig.xml"/>
 
-
-
     <bean id="accountService" class="com.example.exercise12_2.service.AccountService" abstract="true"></bean>
     <bean id="accountServiceImpl" class="com.example.exercise12_2.service.impl.AccountServiceImpl" parent="accountService">
         <property name="accountDAO" ref="accountDAOImpl"></property>

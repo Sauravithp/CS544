@@ -13,7 +13,6 @@ import java.util.Collection;
 public class Exercise122Application {
 
     public static void main(String[] args) {
-        String[] xmlList={"springConfig.xml","springjmsconfig.xml","springserviceconfig.xml","springdaoconfig.xml"};
             ConfigurableApplicationContext context=new ClassPathXmlApplicationContext("springConfig.xml");
             AccountService accountService = context.getBean("accountServiceImpl",AccountService.class);
             // create 2 accounts;
