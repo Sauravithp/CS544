@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xmlns:aop="http://www.springframework.org/schema/aop"
+     xsi:schemaLocation="
+     http://www.springframework.org/schema/beans 
+     http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+     http://www.springframework.org/schema/aop 
+     http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
+
+
+	<bean id="customerService" class="com.example.exercise13_1.service.CustomerService" abstract="true">
+	</bean>
+	<bean id="customerServiceImpl" class="com.example.exercise13_1.service.CustomerServiceImpl" parent="customerDAOService">
+		<property name="customerDAO" ref="customerDAOServiceImpl" />
+		<property name="emailSender" ref="emailSenderImpl" />
+	</bean>
+	<bean id="customerDAOService"  class="com.example.exercise13_1.dao.CustomerDAOService" abstract="true" />
+	<bean id="customerDAOServiceImpl"  class="com.example.exercise13_1.dao.CustomerDAOServiceImpl" parent="customerDAOService" />
+
+	<bean id="emailSender"  class="com.example.exercise13_1.jms.EmailSenderService" abstract="true" />
+	<bean id="emailSenderImpl"  class="com.example.exercise13_1.jms.EmailSenderServiceImpl" parent="emailSender" />
+
+</beans>
