@@ -21,4 +21,14 @@
 	<bean id="emailSender"  class="com.example.exercise13_1.jms.EmailSenderService" abstract="true" />
 	<bean id="emailSenderImpl"  class="com.example.exercise13_1.jms.EmailSenderServiceImpl" parent="emailSender" />
 
+	<bean id="emailLogger" class="com.example.exercise13_1.advice.EmailAdvice"></bean>
+	<aop:config>
+		<aop:aspect id="traceBeforeEmailLogger" ref="emailLogger">
+			<aop:after method="emailLogger"
+						pointcut="(execution(* com.example.exercise13_1.jms.EmailSenderServiceImpl.sendEmail(..)))"/>
+			<aop:pointcut id="pointCutAround"   expression="execution(* com.example.exercise13_1.dao.CustomerDAOServiceImpl.save(..))" />
+			<aop:around method="invoke" pointcut-ref="pointCutAround" />
+		</aop:aspect>
+	</aop:config>
+
 </beans>
