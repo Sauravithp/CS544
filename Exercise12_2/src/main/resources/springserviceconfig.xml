@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+
+
+    <bean id="currencyConverterService" class="com.example.exercise12_2.service.CurrencyConverter" abstract="true"></bean>
+    <bean id="currencyConverterServiceImpl" class="com.example.exercise12_2.service.impl.CurrencyConverterImpl" parent="currencyConverterService"></bean>
+
+
+
+
+</beans>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+
+    <bean id="jmsService" class="com.example.exercise12_2.jms.IJMSSender" abstract="true"></bean>
+    <bean id="jmsServiceImpl" class="com.example.exercise12_2.jms.JMSSender" parent="jmsService"></bean>
+
+
+
+</beans>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <import resource="springjmsconfig.xml"/>
+    <import resource="springdaoconfig.xml"/>
+    <import resource="springserviceconfig.xml"/>
+
+
+
+    <bean id="accountService" class="com.example.exercise12_2.service.AccountService" abstract="true"></bean>
+    <bean id="accountServiceImpl" class="com.example.exercise12_2.service.impl.AccountServiceImpl" parent="accountService">
+        <property name="accountDAO" ref="accountDAOImpl"></property>
+        <property name="currencyConverter" ref="currencyConverterServiceImpl"></property>
+        <property name="jmsSender" ref="jmsServiceImpl"></property>
+        <property name="logger" ref="loggerImpl"></property>
+
+        <!--        <constructor-arg ref="accountDAOImpl"></constructor-arg>-->
+<!--        <constructor-arg ref="currencyConverterServiceImpl"></constructor-arg>-->
+<!--        <constructor-arg ref="jmsServiceImpl"></constructor-arg>-->
+<!--        <constructor-arg ref="loggerImpl"></constructor-arg>-->
+    </bean>
+
+
+
+    <bean id="logger" class="com.example.exercise12_2.logging.ILogger" abstract="true"></bean>
+    <bean id="loggerImpl" class="com.example.exercise12_2.logging.Logger" parent="logger"></bean>
+
+
+
+</beans>
