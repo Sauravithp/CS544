@@ -4,13 +4,15 @@ import com.example.exercise12_1.domain.Account;
 import com.example.exercise12_1.domain.AccountEntry;
 import com.example.exercise12_1.domain.Customer;
 import com.example.exercise12_1.service.AccountService;
-import com.example.exercise12_1.service.IAccountService;
+import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import java.util.Collection;
 
 public class Exercise121Application {
     public static void main(String[] args) {
-        IAccountService accountService = new AccountService();
+        ConfigurableApplicationContext context=new ClassPathXmlApplicationContext("springConfig.xml");
+        AccountService accountService = context.getBean("accountServiceImpl",AccountService.class);
         // create 2 accounts;
         accountService.createAccount(1263862, "Frank Brown");
         accountService.createAccount(4253892, "John Doe");

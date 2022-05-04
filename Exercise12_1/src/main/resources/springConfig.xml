@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="accountService" class="com.example.exercise12_1.service.AccountService" abstract="true"></bean>
+    <bean id="accountServiceImpl" class="com.example.exercise12_1.service.impl.AccountServiceImpl" parent="accountService">
+        <constructor-arg ref="accountDAOImpl"></constructor-arg>
+        <constructor-arg ref="currencyConverterServiceImpl"></constructor-arg>
+        <constructor-arg ref="jmsServiceImpl"></constructor-arg>
+        <constructor-arg ref="loggerImpl"></constructor-arg>
+    </bean>
+
+    <bean id="accountDAO" class="com.example.exercise12_1.dao.IAccountDAO" abstract="true"></bean>
+    <bean id="accountDAOImpl" class="com.example.exercise12_1.dao.AccountDAO" parent="accountDAO"></bean>
+
+    <bean id="currencyConverterService" class="com.example.exercise12_1.service.CurrencyConverter" abstract="true"></bean>
+    <bean id="currencyConverterServiceImpl" class="com.example.exercise12_1.service.impl.CurrencyConverterImpl" parent="currencyConverterService"></bean>
+
+    <bean id="jmsService" class="com.example.exercise12_1.jms.IJMSSender" abstract="true"></bean>
+    <bean id="jmsServiceImpl" class="com.example.exercise12_1.jms.JMSSender" parent="jmsService"></bean>
+
+    <bean id="logger" class="com.example.exercise12_1.logging.ILogger" abstract="true"></bean>
+    <bean id="loggerImpl" class="com.example.exercise12_1.logging.Logger" parent="logger"></bean>
+
+
+
+</beans>
