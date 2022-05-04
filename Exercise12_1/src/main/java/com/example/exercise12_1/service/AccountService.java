@@ -11,10 +11,6 @@ import com.example.exercise12_1.logging.Logger;
 
 import java.util.Collection;
 
-
-
-
-
 public class AccountService implements IAccountService {
 	private IAccountDAO accountDAO;
 	private ICurrencyConverter currencyConverter;
