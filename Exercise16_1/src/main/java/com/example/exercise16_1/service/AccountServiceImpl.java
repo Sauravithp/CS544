@@ -10,6 +10,7 @@ import com.example.exercise16_1.logging.Logger;
 import com.example.exercise16_1.logging.LoggerImpl;
 import com.example.exercise16_1.utils.HibernateUtils;
 import lombok.Setter;
+import org.hibernate.Hibernate;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 
@@ -59,6 +60,9 @@ public class AccountServiceImpl implements AccountService {
 	{
 		Transaction tx=sf.getCurrentSession().beginTransaction();
 		List<Account> accountList=accountDAO.getAccounts();
+//		accountList.forEach(acc->{
+//			Hibernate.initialize(acc.getEntryList());
+//		});
 		tx.commit();
 		return accountList;
 	}
