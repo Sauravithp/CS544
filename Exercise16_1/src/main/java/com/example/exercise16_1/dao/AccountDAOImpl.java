@@ -7,6 +7,8 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
 import java.util.List;
 
 public class AccountDAOImpl implements AccountDAO {
@@ -23,17 +25,7 @@ public class AccountDAOImpl implements AccountDAO {
         // System.out.println("AccountDAO: update account with accountnr ="+account.getAccountnumber());
         Account accountexist = loadAccount(account.getAccountNumber());
         if (accountexist != null) {
-            Session session = null;
-            Transaction tx = null;
-            try {
-                session = HibernateUtils.getSessionFactory().openSession();
-                tx = session.beginTransaction();
-                session.saveOrUpdate(account);
-                tx.commit();
-            } catch (HibernateException ex) {
-                tx.rollback();
-                ex.printStackTrace();
-            }
+            HibernateUtils.getSessionFactory().getCurrentSession().merge(account);
         } else {
             saveAccount(account);
         }
@@ -51,19 +43,9 @@ public class AccountDAOImpl implements AccountDAO {
     }
 
     public List<Account> getAccounts() {
-        Session session = null;
-        Transaction tx = null;
-        List<Account> accountList = new ArrayList<>();
-        try {
-            session = HibernateUtils.getSessionFactory().openSession();
-            tx = session.beginTransaction();
-            accountList = session.createQuery("SELECT a FROM Account a").list();
-            tx.commit();
-        } catch (HibernateException ex) {
-            tx.rollback();
-            ex.printStackTrace();
-        }
-        return accountList;
+        return HibernateUtils.getSessionFactory().getCurrentSession().createQuery("SELECT a FROM Account a " +
+                "LEFT JOIN FETCH Customer c On a.customer.id=c.id " +
+                "LEFT JOIN FETCH a.entryList ").getResultList();
     }
 
 }

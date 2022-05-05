@@ -1,6 +1,5 @@
 package com.example.exercise16_1.utils;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Properties;
