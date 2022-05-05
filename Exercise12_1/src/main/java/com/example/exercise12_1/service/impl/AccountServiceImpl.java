@@ -33,7 +33,7 @@ public class AccountServiceImpl implements AccountService {
 		Customer customer = new Customer(customerName);
 		account.setCustomer(customer);
 		accountDAO.saveAccount(account);
-		logger.log("createAccount with parameters accountNumber= "+accountNumber+" , customerName= "+customerName);
+//		logger.log("createAccount with parameters accountNumber= "+accountNumber+" , customerName= "+customerName);
 		return account;
 	}
 
@@ -41,7 +41,7 @@ public class AccountServiceImpl implements AccountService {
 		Account account = accountDAO.loadAccount(accountNumber);
 		account.deposit(amount);
 		accountDAO.updateAccount(account);
-		logger.log("deposit with parameters accountNumber= "+accountNumber+" , amount= "+amount);
+//		logger.log("deposit with parameters accountNumber= "+accountNumber+" , amount= "+amount);
 		if (amount > 10000){
 			jmsSender.sendJMSMessage("Deposit of $ "+amount+" to account with accountNumber= "+accountNumber);
 		}
