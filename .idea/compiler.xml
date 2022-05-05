@@ -7,12 +7,16 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="Exercise16_1" />
         <module name="Exercise13_1" />
         <module name="Exercise12_2" />
         <module name="Exercise13_2" />
         <module name="Exercise11_1" />
         <module name="Exercise11_2" />
         <module name="Exercise12_1" />
+        <module name="Exercise16_2" />
+        <module name="Exercise17_1" />
+        <module name="Exercise17_2" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -22,6 +26,10 @@
       <module name="Exercise12_2" target="11" />
       <module name="Exercise13_1" target="11" />
       <module name="Exercise13_2" target="11" />
+      <module name="Exercise16_1" target="11" />
+      <module name="Exercise16_2" target="11" />
+      <module name="Exercise17_1" target="11" />
+      <module name="Exercise17_2" target="11" />
       <module name="practiceAop" target="11" />
     </bytecodeTargetLevel>
   </component>
@@ -33,6 +41,10 @@
       <module name="Exercise12_2" options="-parameters" />
       <module name="Exercise13_1" options="-parameters" />
       <module name="Exercise13_2" options="-parameters" />
+      <module name="Exercise16_1" options="-parameters" />
+      <module name="Exercise16_2" options="-parameters" />
+      <module name="Exercise17_1" options="-parameters" />
+      <module name="Exercise17_2" options="-parameters" />
       <module name="practiceAop" options="-parameters" />
     </option>
   </component>
