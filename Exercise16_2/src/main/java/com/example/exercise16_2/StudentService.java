@@ -12,15 +12,11 @@ public class StudentService {
 
 	public StudentService()
 	{
-		Transaction tx=sessionFactory.getCurrentSession().beginTransaction();
 		studentdao = new StudentDAO();
-		tx.commit();
 	}
 
 	public Student getStudent(long studentid) {
-		Transaction tx=sessionFactory.getCurrentSession().beginTransaction();
 		Student student=studentdao.load(studentid);
-		tx.commit();
 		return student;
 	}
 }
