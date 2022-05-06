@@ -8,13 +8,12 @@ import com.example.exercise17_1.jms.JMSSender;
 import com.example.exercise17_1.jms.JMSSenderImpl;
 import com.example.exercise17_1.logging.Logger;
 import com.example.exercise17_1.logging.LoggerImpl;
-import com.example.exercise17_1.utils.HibernateUtils;
+
 import lombok.Setter;
 import org.hibernate.Hibernate;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 
-import java.util.Collection;
 import java.util.List;
 
 
@@ -24,7 +23,12 @@ public class AccountServiceImpl implements AccountService {
 	private CurrencyConverter currencyConverter;
 	private JMSSender jmsSender;
 	private Logger logger;
-	private SessionFactory sf= HibernateUtils.getSessionFactory();
+
+	private SessionFactory sf;
+
+	public void setSessionFactory(SessionFactory sessionFactory) {
+		this.sf = sessionFactory;
+	}
 
 	public Account createAccount(long accountNumber, String customerName) {
 		Transaction tx=sf.getCurrentSession().beginTransaction();

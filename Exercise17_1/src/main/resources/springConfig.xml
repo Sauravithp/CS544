@@ -8,6 +8,7 @@
         <property name="currencyConverter" ref="currencyConverterServiceImpl"></property>
         <property name="jmsSender" ref="jmsServiceImpl"></property>
         <property name="logger" ref="loggerImpl"></property>
+        <property name="sessionFactory" ref="sessionFactory" />
 
         <!--        <constructor-arg ref="accountDAOImpl"></constructor-arg>-->
         <!--        <constructor-arg ref="currencyConverterServiceImpl"></constructor-arg>-->
@@ -16,10 +17,14 @@
     </bean>
 
     <bean id="accountDAO" class="com.example.exercise17_1.dao.AccountDAO" abstract="true"></bean>
-    <bean id="accountDAOImpl" class="com.example.exercise17_1.dao.AccountDAOImpl" parent="accountDAO"></bean>
+    <bean id="accountDAOImpl" class="com.example.exercise17_1.dao.AccountDAOImpl" parent="accountDAO">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
 
-    <bean id="currencyConverterService" class="com.example.exercise17_1.service.CurrencyConverter" abstract="true"></bean>
-    <bean id="currencyConverterServiceImpl" class="com.example.exercise17_1.service.CurrencyConverterImpl" parent="currencyConverterService"></bean>
+    <bean id="currencyConverterService" class="com.example.exercise17_1.service.CurrencyConverter"
+          abstract="true"></bean>
+    <bean id="currencyConverterServiceImpl" class="com.example.exercise17_1.service.CurrencyConverterImpl"
+          parent="currencyConverterService"></bean>
 
     <bean id="jmsService" class="com.example.exercise17_1.jms.JMSSender" abstract="true"></bean>
     <bean id="jmsServiceImpl" class="com.example.exercise17_1.jms.JMSSenderImpl" parent="jmsService"></bean>
@@ -27,6 +32,35 @@
     <bean id="logger" class="com.example.exercise17_1.logging.Logger" abstract="true"></bean>
     <bean id="loggerImpl" class="com.example.exercise17_1.logging.LoggerImpl" parent="logger"></bean>
 
+    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+        <property name="url" value="jdbc:mysql://localhost/cs544"/>
+        <property name="username" value="root"/>
+        <property name="password" value=""/>
 
+    </bean>
 
+    <bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+        <property name="dataSource" ref="dataSource"/>
+        <property name="hibernateProperties" ref="hibernateProperties"/>
+        <property name="annotatedClasses">
+            <list>
+                <value>com.example.exercise17_1.domain.Account</value>
+                <value>com.example.exercise17_1.domain.AccountEntry</value>
+                <value>com.example.exercise17_1.domain.Customer</value>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="hibernateProperties" class="org.springframework.beans.factory.config.PropertiesFactoryBean">
+        <property name="properties">
+            <props>
+                <prop key="hibernate.hbm2ddl.auto">create</prop>
+                <prop key="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</prop>
+                <prop key="connection.pool.size">1</prop>
+                <prop key="hibernate.show_sql">true</prop>
+                <prop key="hibernate.current_session_context_class">thread</prop>
+            </props>
+        </property>
+    </bean>
 </beans>
