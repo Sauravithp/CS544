@@ -1,6 +1,7 @@
 package com.example.exercise16_2;
 
 import com.example.exercise16_2.utils.HibernateUtils;
+import org.hibernate.Hibernate;
 import org.hibernate.Transaction;
 
 import java.util.ArrayList;
@@ -15,17 +16,18 @@ public class StudentDAO {
 		Student student = new Student(11334, "Frank", "Brown");
 		Course course1 = new Course(1101, "Java", "A");
 		Course course2 = new Course(1102, "Math", "B-");
-		student.setCourses(Arrays.asList(course1,course2));
+		student.setCourselist(Arrays.asList(course1,course2));
 		HibernateUtils.getSessionFactory().getCurrentSession().save(student);
 
 	}
 
 	public Student load(long studentid) {
 		List<Student> studentList=	HibernateUtils.getSessionFactory()
-				.getCurrentSession().createQuery("SELECT a FROM Student a ").getResultList();
+				.getCurrentSession().createQuery("SELECT DISTINCT a FROM Student a").getResultList();
 
 		for (Student student : studentList) {
 			if (student.getStudentid() == studentid) {
+				Hibernate.initialize(student.getCourselist());
 				return student;
 			}
 		}

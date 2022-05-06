@@ -21,7 +21,7 @@ public class Student {
 	private String lastname;
 
 	@OneToMany(cascade = CascadeType.ALL)
-	private List<Course> courses;
+	private List<Course> courselist;
 	
 
 	public Student() {
