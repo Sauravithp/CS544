@@ -1,0 +1,32 @@
+<!--<?xml version="1.0" encoding="windows-1252" ?>-->
+<!--<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN"-->
+<!-- "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">-->
+
+<!--<hibernate-configuration>-->
+<!--	<session-factory>-->
+<!--		&lt;!&ndash; HSQL DB running on localhost &ndash;&gt;-->
+<!--&lt;!&ndash;        <property name="connection.url">jdbc:mysql://localhost:3306/Practice</property>&ndash;&gt;-->
+<!--&lt;!&ndash;        <property name="connection.driver_class">com.mysql.jdbc.Driver</property>&ndash;&gt;-->
+<!--&lt;!&ndash;        <property name="connection.username">root</property>&ndash;&gt;-->
+<!--&lt;!&ndash;        <property name="connection.password"></property>&ndash;&gt;-->
+<!--&lt;!&ndash;        <property name="dialect">org.hibernate.dialect.MySQL5Dialect</property>&ndash;&gt;-->
+
+<!--&lt;!&ndash;		&lt;!&ndash; Use the Hibernate built-in pool for tests. &ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;		<property name="connection.pool_size">1</property>&ndash;&gt;-->
+
+<!--&lt;!&ndash;		&lt;!&ndash; Show all SQL DML executed by Hibernate &ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;		<property name="show_sql">true</property>&ndash;&gt;-->
+<!--&lt;!&ndash;		<property name="use_sql_comments">true</property>&ndash;&gt;-->
+<!--&lt;!&ndash;		<property name="hibernate.format_sql">false</property>&ndash;&gt;-->
+<!--&lt;!&ndash;		&ndash;&gt;-->
+<!--&lt;!&ndash;		&lt;!&ndash; Always drop and recreate the database schema on startup &ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;		<property name="hbm2ddl.auto">create</property>&ndash;&gt;-->
+<!--&lt;!&ndash;		&ndash;&gt;-->
+<!--		&lt;!&ndash; use thread local pattern &ndash;&gt;-->
+<!--		<property name="current_session_context_class">thread</property>-->
+<!--		-->
+<!--		&lt;!&ndash; Mapping files &ndash;&gt;-->
+<!--&lt;!&ndash;		<mapping /> &lt;!&ndash; TODO map classes &ndash;&gt;&ndash;&gt;-->
+
+<!--	</session-factory>-->
+<!--</hibernate-configuration>-->
