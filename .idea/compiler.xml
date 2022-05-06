@@ -9,6 +9,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="Exercise15_1" />
         <module name="Exercise16_1" />
+        <module name="Exercise15_2" />
         <module name="Exercise13_1" />
         <module name="Exercise12_2" />
         <module name="Exercise13_2" />
@@ -28,6 +29,7 @@
       <module name="Exercise13_1" target="11" />
       <module name="Exercise13_2" target="11" />
       <module name="Exercise15_1" target="11" />
+      <module name="Exercise15_2" target="11" />
       <module name="Exercise16_1" target="11" />
       <module name="Exercise16_2" target="11" />
       <module name="Exercise17_1" target="11" />
@@ -44,6 +46,7 @@
       <module name="Exercise13_1" options="-parameters" />
       <module name="Exercise13_2" options="-parameters" />
       <module name="Exercise15_1" options="-parameters" />
+      <module name="Exercise15_2" options="-parameters" />
       <module name="Exercise16_1" options="-parameters" />
       <module name="Exercise16_2" options="-parameters" />
       <module name="Exercise17_1" options="-parameters" />

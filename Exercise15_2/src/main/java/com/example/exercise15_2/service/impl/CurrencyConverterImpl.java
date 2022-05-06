@@ -1,7 +1,7 @@
 package com.example.exercise15_2.service.impl;
 
 
-import com.example.exercise13_2.service.CurrencyConverter;
+import com.example.exercise15_2.service.CurrencyConverter;
 
 public class CurrencyConverterImpl implements CurrencyConverter {
     public double euroToDollars (double amount){

@@ -96,6 +96,7 @@ public class AccountServiceImpl implements AccountService {
 	@Override
 	@Scheduled(cron="0/10 * * * * *")
 	public void printAccountStatement() {
+		System.out.println("Scheduled Data.........");
 		Collection<Account> accountlist=getAllAccounts();
 		Customer customer = null;
 		for (Account account : accountlist) {
