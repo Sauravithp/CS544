@@ -15,10 +15,7 @@ public class AccountDAOImpl implements AccountDAO {
 
     public void saveAccount(Account account) {
         // System.out.println("AccountDAO: saving account with accountnr ="+account.getAccountnumber());
-
-
         sf.getCurrentSession().saveOrUpdate(account);
-
     }
 
     public void updateAccount(Account account) {
