@@ -10,8 +10,8 @@ public class Exercise151Application {
         @SuppressWarnings({ "unused", "resource" })
         ApplicationContext context = new ClassPathXmlApplicationContext("springconfig.xml");
         BillingService billingService=context.getBean("billingServiceImpl",BillingService.class);
-        billingService.generateBillingReport();
-        billingService.printBills();
+//        billingService.generateBillingReport();
+//        billingService.printBills();
     }
 
 }

@@ -34,6 +34,7 @@
     <bean id="loggerImpl" class="com.example.exercise13_2.logging.Logger" parent="logger"></bean>
 
     <bean id="logTracingAdvice" class="com.example.exercise13_2.advice.LogTracing"></bean>
+
     <aop:config>
         <aop:aspect id="logTracing" ref="logTracingAdvice">
             <aop:after method="logAllMethods" pointcut="execution(* com.example.exercise13_2.dao.*.*(..))"/>
@@ -41,6 +42,7 @@
             <aop:before method="logJmsMessage" pointcut="execution(* com.example.exercise13_2.jms.JMSSender.sendJMSMessage(..))"/>
         </aop:aspect>
     </aop:config>
+
 
 
 </beans>
