@@ -8,10 +8,7 @@ import javax.persistence.Id;
 import java.time.LocalDate;
 
 @Entity
-@Getter
-@Setter
-@AllArgsConstructor
-@NoArgsConstructor
+@Data
 public class Country {
     @Id
     @Column(name = "country_id")

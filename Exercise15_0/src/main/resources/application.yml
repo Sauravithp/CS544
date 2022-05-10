@@ -2,8 +2,9 @@ spring:
   application:
     name: exercise15
   datasource:
-    url: jdbc:mysql://localhost:3306/Practice
+    url: jdbc:mysql://localhost:3306/sakila
     username: root
+    password:
     driverClassName: com.mysql.cj.jdbc.Driver
     hikari:
       maximumPoolSize: 10
@@ -16,4 +17,8 @@ spring:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.MySQL8Dialect
-
+        hbm2ddl:
+          auto: update
+logging:
+  file:
+    name: /Coding/Logging/${spring.application.name}/log
