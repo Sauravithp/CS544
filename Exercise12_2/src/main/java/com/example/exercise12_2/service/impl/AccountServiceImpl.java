@@ -1,10 +1,13 @@
 package com.example.exercise12_2.service.impl;
 
+import com.example.exercise12_2.dao.AccountDAO;
 import com.example.exercise12_2.dao.IAccountDAO;
 import com.example.exercise12_2.domain.Account;
 import com.example.exercise12_2.domain.Customer;
 import com.example.exercise12_2.jms.IJMSSender;
+import com.example.exercise12_2.jms.JMSSender;
 import com.example.exercise12_2.logging.ILogger;
+import com.example.exercise12_2.logging.Logger;
 import com.example.exercise12_2.service.AccountService;
 import com.example.exercise12_2.service.CurrencyConverter;
 import lombok.Setter;
@@ -18,12 +21,13 @@ public class AccountServiceImpl implements AccountService {
 	private IJMSSender jmsSender;
 	private ILogger logger;
 	
-//	public AccountServiceImpl(AccountDAO accountDAO, CurrencyConverterImpl currencyConverter, JMSSender jmsSender, Logger logger ){
-//		this.accountDAO=accountDAO;
-//		this.currencyConverter= currencyConverter;
-//		this.jmsSender = jmsSender;
-//		this.logger = logger;
-//	}
+	public AccountServiceImpl(AccountDAO accountDAO, CurrencyConverterImpl currencyConverter, JMSSender jmsSender,
+							  Logger logger ){
+		this.accountDAO=accountDAO;
+		this.currencyConverter= currencyConverter;
+		this.jmsSender = jmsSender;
+		this.logger = logger;
+	}
 
 	public Account createAccount(long accountNumber, String customerName) {
 		Account account = new Account(accountNumber);
