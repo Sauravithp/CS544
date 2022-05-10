@@ -1,6 +1,6 @@
 package com.example.exercise15_0.domain;
 
-import lombok.Data;
+import lombok.*;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -8,7 +8,10 @@ import javax.persistence.Id;
 import java.time.LocalDate;
 
 @Entity
-@Data
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 public class Actor {
     @Id
     @Column(name = "actor_id")
