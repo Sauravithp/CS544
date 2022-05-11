@@ -4,4 +4,14 @@ server:
 spring:
   application:
     name: country-server
+  main:
+    allow-bean-definition-overriding: true
+    allow-circular-references: true
 
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 10000
