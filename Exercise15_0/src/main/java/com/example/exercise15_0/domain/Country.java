@@ -2,9 +2,7 @@ package com.example.exercise15_0.domain;
 
 import lombok.*;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.time.LocalDate;
 
 @Entity
@@ -12,6 +10,7 @@ import java.time.LocalDate;
 public class Country {
     @Id
     @Column(name = "country_id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(name = "country")

@@ -7,4 +7,6 @@ import java.util.List;
 public interface CountryService {
 
     List<Country> read();
+
+    Country update(Long countryId, Country country);
 }
