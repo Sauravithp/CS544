@@ -13,7 +13,7 @@ public class CountryController {
     @Autowired
     private CountryFeign countryService;
 
-    @GetMapping
+    @GetMapping("/countries")
     public List<Country> read(){
        return countryService.read();
     }
