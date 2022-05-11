@@ -18,6 +18,7 @@
         <module name="Exercise11_2" />
         <module name="Exercise12_1" />
         <module name="Exercise15_0_Server" />
+        <module name="Exercise15_0_Eureka_Server" />
         <module name="Exercise16_2" />
         <module name="Exercise17_1" />
         <module name="Exercise17_2" />
@@ -31,6 +32,7 @@
       <module name="Exercise13_1" target="11" />
       <module name="Exercise13_2" target="11" />
       <module name="Exercise15_0" target="11" />
+      <module name="Exercise15_0_Eureka_Server" target="11" />
       <module name="Exercise15_0_Server" target="11" />
       <module name="Exercise15_1" target="11" />
       <module name="Exercise15_2" target="11" />
@@ -50,6 +52,7 @@
       <module name="Exercise13_1" options="-parameters" />
       <module name="Exercise13_2" options="-parameters" />
       <module name="Exercise15_0" options="-parameters" />
+      <module name="Exercise15_0_Eureka_Server" options="-parameters" />
       <module name="Exercise15_0_Server" options="-parameters" />
       <module name="Exercise15_1" options="-parameters" />
       <module name="Exercise15_2" options="-parameters" />

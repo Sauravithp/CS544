@@ -21,6 +21,7 @@
         <option value="$PROJECT_DIR$/Exercise15_2/pom.xml" />
         <option value="$PROJECT_DIR$/Exercise15_0/pom.xml" />
         <option value="$PROJECT_DIR$/Exercise15_0_Server/pom.xml" />
+        <option value="$PROJECT_DIR$/Exercise15_0_Eureka_Server/pom.xml" />
       </list>
     </option>
   </component>
