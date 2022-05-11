@@ -1,6 +1,9 @@
+server:
+  port: 8080
+
 spring:
   application:
-    name: exercise15
+    name: country-service
   datasource:
     url: jdbc:mysql://localhost:3306/sakila
     username: root
@@ -22,3 +25,4 @@ spring:
 logging:
   file:
     name: /Coding/Logging/${spring.application.name}/log
+
