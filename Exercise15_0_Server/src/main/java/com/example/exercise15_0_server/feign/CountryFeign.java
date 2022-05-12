@@ -7,8 +7,13 @@ import org.springframework.web.bind.annotation.GetMapping;
 import java.util.List;
 
 @FeignClient(name ="country-service")
+//http://localhost:8080
 public interface CountryFeign {
 
     @GetMapping("/countries")
     List<Country> read();
+
 }
+
+
+//
