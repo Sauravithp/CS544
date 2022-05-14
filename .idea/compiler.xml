@@ -17,7 +17,11 @@
         <module name="Exercise11_1" />
         <module name="Exercise11_2" />
         <module name="Exercise12_1" />
+        <module name="assignment24-2-receiver" />
         <module name="Exercise15_0_Server" />
+        <module name="assignment24-1-receiver" />
+        <module name="assignment24-2-sender" />
+        <module name="assignment24-1-sender" />
         <module name="Exercise15_0_Eureka_Server" />
         <module name="Exercise16_2" />
         <module name="Exercise17_1" />
@@ -25,6 +29,10 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="assignment24-1-receiver" target="11" />
+      <module name="assignment24-1-sender" target="11" />
+      <module name="assignment24-2-receiver" target="11" />
+      <module name="assignment24-2-sender" target="11" />
       <module name="Exercise11_1" target="11" />
       <module name="Exercise11_2" target="11" />
       <module name="Exercise12_1" target="11" />
@@ -60,6 +68,10 @@
       <module name="Exercise16_2" options="-parameters" />
       <module name="Exercise17_1" options="-parameters" />
       <module name="Exercise17_2" options="-parameters" />
+      <module name="assignment24-1-receiver" options="-parameters" />
+      <module name="assignment24-1-sender" options="-parameters" />
+      <module name="assignment24-2-receiver" options="-parameters" />
+      <module name="assignment24-2-sender" options="-parameters" />
       <module name="practiceAop" options="-parameters" />
     </option>
   </component>

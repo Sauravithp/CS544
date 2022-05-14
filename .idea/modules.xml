@@ -18,6 +18,10 @@
       <module fileurl="file://$PROJECT_DIR$/Exercise16_2/Exercise16_2.iml" filepath="$PROJECT_DIR$/Exercise16_2/Exercise16_2.iml" />
       <module fileurl="file://$PROJECT_DIR$/Exercise17_1/Exercise17_1.iml" filepath="$PROJECT_DIR$/Exercise17_1/Exercise17_1.iml" />
       <module fileurl="file://$PROJECT_DIR$/Exercise17_2/Exercise17_2.iml" filepath="$PROJECT_DIR$/Exercise17_2/Exercise17_2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/assignment24-1/assignment24-1-receiver/assignment24-1-receiver.iml" filepath="$PROJECT_DIR$/assignment24-1/assignment24-1-receiver/assignment24-1-receiver.iml" />
+      <module fileurl="file://$PROJECT_DIR$/assignment24-1/assignment24-1-sender/assignment24-1-sender.iml" filepath="$PROJECT_DIR$/assignment24-1/assignment24-1-sender/assignment24-1-sender.iml" />
+      <module fileurl="file://$PROJECT_DIR$/assignment24-2/assignment24-2-receiver/assignment24-2-receiver.iml" filepath="$PROJECT_DIR$/assignment24-2/assignment24-2-receiver/assignment24-2-receiver.iml" />
+      <module fileurl="file://$PROJECT_DIR$/assignment24-2/assignment24-2-sender/assignment24-2-sender.iml" filepath="$PROJECT_DIR$/assignment24-2/assignment24-2-sender/assignment24-2-sender.iml" />
     </modules>
   </component>
 </project>
